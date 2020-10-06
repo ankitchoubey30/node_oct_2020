@@ -41,11 +41,39 @@ app.get('/friends/all', function(request, response){
    
 })
 
-app.post('/add', function(request, response){
+app.get('/friends/get/:id', function(req, res){
+    console.log(req.params);
+    var query = "select * from friends where id = " + req.params.id
+    connection.query(query, function(err, result){
+        if(err)
+            throw err
+         
+        res.json(result)    
+    })
+    
+})
+
+
+
+app.post('/friends/add', function(request, response){
     console.log(request);
     console.log(request.body);
-    response.send("Received request body!!!!")
+    var name = request.body.name
+    var location = request.body.location
+    var score = request.body.score
+
+    var query = "insert into friends (name, location, score) values('" +name +"', '" + location + "','" + score + "')"  
+    console.log(query);
+    connection.query(query, function(err, success){
+        if(err){
+            throw err
+        } 
+        console.log(success);
+        response.send("Success!!!!")
+    })
+    //response.send("Received request body!!!!")
 } )
+
 
 
 
