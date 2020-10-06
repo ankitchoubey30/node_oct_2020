@@ -74,6 +74,41 @@ app.post('/friends/add', function(request, response){
     //response.send("Received request body!!!!")
 } )
 
+app.delete('/friends/delete/:id', function(req, res){
+
+    var query = "delete from friends where id= " + req.params.id
+    connection.query(query, function(err, success){
+        if(err){
+            throw err
+        } 
+        console.log(success);
+        res.send("Delete Success!!!! for id: " + req.params.id)
+    })
+})
+
+app.put('/friends/update/:id', function(req, res){
+
+    var newfriend = req.body
+    console.log(req.params.id);
+    console.log(newfriend);
+    var query = "update friends set name = '" + newfriend.name + 
+                "', location='" + newfriend.location + 
+                "',score='" + newfriend.score + 
+                "' where id = " + req.params.id
+    console.log(query);            
+    connection.query(query, function(err, success){
+        if(err){
+            throw err
+        }
+        console.log("Id updated: " + req.params.id);
+        res.send("Id updated: " + req.params.id)
+
+    })
+
+})
+
+
+
 
 
 
