@@ -1,0 +1,5 @@
+Activity 1:
+ 
+In addition to friends table.
+Implement a feed/post table with friendid, feedid, and feed/poststring.
+For each request of type GET, POST, PUT and DELETE; retrieve, add, change and delete values from feed/post table respectively.
