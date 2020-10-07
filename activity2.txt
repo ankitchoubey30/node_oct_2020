@@ -1,0 +1,6 @@
+Use axios or https to consume the rest api from https://jspnplaceholer.typicode.com/users and display it template generated with ejs in tabular format.
+
+Each row will have clickable button!
+
+You should be able to click on button in front of each row  and navigate to another page generated via template, which will display all values of user which you clicked in bulleted list.
+
