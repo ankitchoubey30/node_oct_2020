@@ -23,9 +23,9 @@ app.get('/contact/:name', function(req, res){
 app.use(express.static('public'))
 
 //use rest client to communicate with external middlewares
-app.get('/remote/users', function(req, res){
+app.get('/remote/users/', function(req, res){
     console.log("Get data from remote rest api!!!!")
-    https.get('https://jsonplaceholder.typicode.com/users', function(response){
+    https.get('https://jsonplaceholder.typicode.com/users/' , function(response){
 
         let data = ''      
 
