@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/prafful/node_oct_2020#readme",
   "dependencies": {
+    "axios": "^0.20.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "mysql": "^2.18.1"
